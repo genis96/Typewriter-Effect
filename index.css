@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    height: 100vh;
+    background: rgb(203, 224, 245) url(../Practice/pattern.jpeg) no-repeat center / cover;
+    color: rgb(14, 11, 11);
+    /* wouldnt do this if there was more content under the main area */
+    overflow: hidden;
+}
+
+/* wraps arounf everything, then change the flex direction to column and justify to the center */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 2.5rem;
+}
+
+/* controls the space b/w the two <h>'s - , the weight and etc  */
+h1, h2 {
+    font-weight: 300;
+    margin: 0.4rem;
+}
+
+h1 {
+    font-size: 3.2rem;
+}
+
+h2 {
+    font-size: 1.9rem;
+    color: rgb(43, 35, 35);
+    font-weight: 300;
+}
+
+/* Cursor, created in the JS Span - the nice line that appears as it types */
+.txt-type > .txt {
+    border-right: 0.2rem solid rgb(33, 50, 59);
+}
+
+/* Responsive H1 
+Note: so, the original size above is 3.2rem, however, I want it bigger so below it will be set to 3.6rem @ above 1200
+then, the first break point when minimized will be reduced to the original 3.2rem
+then, for the smaller one it will be 2.8 once it hits 800px
+*/
+@media(min-width: 1200px) {
+    h1 {
+        font-size: 3.6rem;
+    }
+}
+
+/* want to make smaller */
+@media(max-width: 800px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+}
+
+
+@media(max-width: 500px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+}
